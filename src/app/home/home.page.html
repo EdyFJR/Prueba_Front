@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section class="user-details" *ngFor="let user of userInfo">
+    <h2>Datos de usuarios</h2>
+    <dl>
+      <dt>Id:</dt>
+      <dd>{{ user.id }}</dd>
+      <dt>Clave</dt>
+      <dd>{{ user.clave }}</dd>
+      <dt>Matricula</dt>
+      <dd>{{ user.matricula}}</dd>
+      <dt>Apellido Materno</dt>
+      <dd>{{ user.materno }}</dd>
+      <dt>Apellido Paterno</dt>
+      <dd>{{ user.paterno }}</dd>
+      <dt>Nombre</dt>
+      <dd>{{ user.nombre }}</dd>
+    </dl>
+    <ion-button (click)="openEditUserModal(user.id)">Editar</ion-button>
+    <ion-button (click)="deleteUser(user.id)">Eliminar</ion-button>
+  </section>
+</ion-content>
